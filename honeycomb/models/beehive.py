@@ -9,6 +9,7 @@ class BeeHive(PersistentMapping):
     def remove_node_recursively(self, node_id):
         """
         Elimina el nodo, todos sus hijos y todas las conexiones asociadas (edges) del índice global.
+    
         """
         node = self.__nodes__.get(node_id)
         if not node:
@@ -20,6 +21,7 @@ class BeeHive(PersistentMapping):
         def collect_ids(n):
             nid = getattr(n, "__name__", None) or str(getattr(n, "id", ""))
             ids_to_remove.add(nid)
+            
             # Si el nodo tiene hijos (por ejemplo, en un grafo o contenedor), recorre recursivamente
             if hasattr(n, "nodes") and isinstance(getattr(n, "nodes", None), (list, PersistentList)):
                 for child in n.nodes:
