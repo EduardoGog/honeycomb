@@ -46,6 +46,7 @@ def test_add_and_remove_nodes():
 
 def test_add_node_with_uuid_key():
     beehive = BeeHive()
+    
     # Crear un nodo sin __name__ (o con None)
     nodo1 = CellText(name=None, contents="contenido1")
     nodo2 = CellText(name=None, contents="contenido2")
